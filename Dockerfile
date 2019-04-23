@@ -2,9 +2,9 @@
 
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY package.json .
+COPY package*.json ./
 RUN npm install
-COPY . .
+COPY ./ ./
 
 RUN npm run build
 # will create a build folder in /app/build and will have all node moudlesn ans project dir
