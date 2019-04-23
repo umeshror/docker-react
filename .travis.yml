@@ -21,4 +21,4 @@ deploy:
     branch: master # deploy only when new code is pushed to master
   access_key_id: $AWS_ACCESS_KEY # get the value from enviroment variable which is set in travis ci dashboard
   secres_access_key:
-    secore: "$AWS_SECRET_KEY"
+    secure: "$AWS_SECRET_KEY"
