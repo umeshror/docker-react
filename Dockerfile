@@ -13,6 +13,7 @@ RUN npm run build
 
 # RUN phase
 FROM nginx
+EXPOSE: 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # default command in start nginx so we dont need to provide any cmd explicitly
 # docker build .
