@@ -1,0 +1,19 @@
+version: "3" # version of docker compose to user
+services:
+  react-web:
+    build:
+      context: . # where files to come from
+      dockerfile: Dockerfile.dev # dockerfile to use to create an image
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app #current folder outside the container to the folder inside the container
+  tests:
+    build:
+      context: . # where files to come from
+      dockerfile: Dockerfile.dev # dockerfile to use to create an image
+    volumes:
+      - /app/node_modules
+      - .:/app #current folder outside the container to the folder inside the container
+    command: ["npm", "run", "test"]
